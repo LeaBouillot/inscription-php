@@ -4,9 +4,21 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>User-Login-PHP</title>
+    <title>Inscription-php</title>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+</style>
+<!-- <style>
     * {
         margin: 0;
         padding: 0;
@@ -56,38 +68,29 @@
         background: linear-gradient(270deg, #ff994f, #fa6d86);
         border: none;
         border-radius: 50px;
-    }
+    } -->
 </style>
 
 <body>
-    <?php
-    if (isset($_POST['submit'])) {
-        echo "Nous somme heureux de vous retouver";
-    } else {
-        echo "Veuillez entrer votre nom";
-    }
-    ?>
-    <div class="container">
+    <form action="inscription.php" method="POST">
+        <label for="nom">Votre Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom">
+        <br>
+        <label for="prenom">Votre prénom</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
+        <br>
+        <label for="pseudo">Votre pseudo</label>
+        <input type="text" id="pseudo" name="pseudo" placeholder="Votre pseudo">
+        <br>
+        <label for="password">Votre Password</label>
+        <input type="password" id="password" name="password" placeholder="Votre password">
+        <br>
+        <label for="email">Votre Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email">
+        <br>
+        <input type="submit" value="M'inscrire" name="submit">
 
-        <div class="holder">
-            <h1 class="hero"><?php echo "The user's name is " . $_POST['name'] . " 💖"; ?>
-            </h1>
-            <form action="index.php" method="POST">
-                <div class="wrapper">
-                    <br>
-                    <input type="text" placeholder="Enter Username" name="name">
-                </div>
-                <br>
-                <br>
-                <div class="wrapper">
-                    <input type="submit" value="submit" name="submit">
-                </div>
-            </form>
-
-        </div>
-    </div>
-
-
+    </form>
 </body>
 
 </html>
